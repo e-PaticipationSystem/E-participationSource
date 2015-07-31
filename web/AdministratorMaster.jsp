@@ -109,9 +109,15 @@
                     </div>
 		</div>
               
-              <div>
+              <div class="col-lg-4">
                          THIS IS THE CONTENT PLACE
-              </div>   
+              </div>
+              <div class="col-lg-4">
+                         THIS IS THE CONTENT PLACE 2
+              </div>
+               <div class="col-lg-4">
+                         THIS IS THE CONTENT PLACE 3
+              </div>
    
           </div>
       </div>
