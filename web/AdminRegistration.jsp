@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login - To System</title>
+        <title>Register - To System</title>
          <meta name="keywords" content="" />
          <meta name="description" content="" />
          <meta name="viewport" content="width=device-width">        
