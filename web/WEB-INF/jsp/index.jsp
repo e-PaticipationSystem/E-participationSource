@@ -15,106 +15,98 @@
     <body>
          <div class="navbar navbar-inverse">
       <div class="navbar-header">
-        <div class="logo"><h1>ADMINISTRATOR PANE</h1></div>        
+        <div class="logo"><h1>E-Participation</h1></div>
+        <div class="LoginForm pull-right ">
+            <form>
+                <fieldset>
+                    <div class="col-md-4">
+                     <label for="username" class="col-sm-2 control-label">Username</label>
+                     <input type="text" class="form-control" id="username" placeholder="Username">                   
+                     </div>
+                    <div class="col-md-4">
+                     <label for="password" class="col-sm-2 control-label">Password</label>
+                      <input type="password" class="form-control" id="password" placeholder="Password">             
+                    </div>
+                      <div class="col-md-4">
+                    <div class="col-sm-offset-2 col-sm-10">
+                         <input type="submit" value="Sign in" class="btn btn-default">
+                         </div>
+                      </div>                  
+                   
+                </fieldset>
+            </form>
+        </div>
       </div>   
     </div>
-       <div class="template-page-wrapper">
-         <div class="navbar-collapse collapse templatemo-sidebar">
-        <ul class="templatemo-sidebar-menu">
-          <li>
-            <form class="navbar-form">
-              <input type="text" class="form-control" id="templatemo_search_box">
-              <span class="btn btn-default">Go</span>
-            </form>
-          </li>
-          <li class="active"><a href="#"><i class="fa fa-home"></i>Dashboard</a></li>         
-          <li><a href="#"><i class="fa fa-cubes"></i><span class="badge pull-right"></span><u>CREATE POLL</u></a></li>
-          <li><a href="#"><i class="fa fa-map-marker"></i><span class="badge pull-right"></span><u>MY SESSIONS</u></a></li>
-          <li><a href="#"><i class="fa fa-users"></i><span class="badge pull-right"></span><u>PARTICIPANTS</u></a></li>
-          <li><a href="#"><i class="fa fa-cog"></i>SETTINGS</a></li>
-          </ul>
-      </div><!--/.navbar-collapse -->
+       <div class="template-page-wrapper">       
       <div class="templatemo-content-wrapper">
-          <div class="templatemo-content">
-              
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-comments fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                  
-                                        <div><u>POLLS</u></div>
-                                    </div>
-                                </div>
-                            </div>    
-                            <div class="panel-footer">
-                            <a href="#">
-                            
-                                    <span class="pull-left">View More...</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                               </a>
-                            </div>                          
-                        </div>
-                    </div>
-                       <div class="col-lg-4 col-md-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-refresh fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                     
-                                        <div><u>SESSIONS</u></div>
-                                    </div>
-                                </div>
-                            </div>    
-                            <div class="panel-footer">
-                            <a href="#">
-                            
-                                    <span class="pull-left">View More...</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                               </a>
-                            </div>                          
-                        </div>
-                    </div>
-                       <div class="col-lg-4 col-md-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-users fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                    
-                                        <div><u>PARTICIPANTS</u></div>
-                                    </div>
-                                </div>
-                            </div>    
-                            <div class="panel-footer">
-                            <a href="#">
-                            
-                                    <span class="pull-left">View More...</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                               </a>
-                            </div>                          
-                        </div>
-                    </div>
-		</div>
-              
-              <div>
-                         THIS IS THE CONTENT PLACE
-              </div>   
+                  
+               <div class="col-lg-6 col-md-4 col-sm-2">                 
+                         <img src="styles/img/perpartlogo.png" alt="e-participation" height="700"/>              
+               </div>  
+               <div class="col-lg-6 col-md-4 col-sm-2">
+                        <form class="form-horizontal templatemo-signin-form" role="form" action="AddAdminServlet" method="POST">
+   <div class="form-group">
+          <div class="col-md-12">
+            <label for="AdminName" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="firstname" placeholder="Name">
+            </div>
+          </div>              
+        </div>
+        <div class="form-group">
+          <div class="col-md-12">
+            <label for="AdminName" class="col-sm-2 control-label">Surname</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="lastname" placeholder="Surname">
+            </div>
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <div class="col-md-12">
+            <label for="Username" class="col-sm-2 control-label">Username</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="username" placeholder="Username">
+            </div>
+          </div>              
+        </div>
+        <div class="form-group">
+          <div class="col-md-12">
+            <label for="Password" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+          </div>
+        </div>
+    
+    <div class="form-group">
+          <div class="col-md-12">
+            <label for="ConfirmPassword" class="col-sm-2 control-label">Confirm Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password">
+            </div>
+          </div>
+        </div>
+      <div class="form-group">
+          <div class="col-md-12">
+            <div class="col-sm-offset-2 col-sm-10">
+              <input type="submit" value="Register" onclick="ajaxFunction()"class="btn btn-default">
+            </div>
+          </div>
+        </div>
+        
+     <div id="showDiv">
+    
+   </div>
+</form>
+
+               </div>   
+   
    
           </div>
       </div>
+        
         
         
      <footer class="templatemo-footer">
