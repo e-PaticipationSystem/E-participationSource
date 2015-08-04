@@ -15,11 +15,21 @@
   <property name="AdminSurname">
       <column name="AdminSurname"></column>
   </property>
+
   <property name="Type">
       <column name="Type"></column>
+
+  <property name="Username">
+      <column name="Username"></column>
   </property>
   <property name="Password">
       <column name="Password"></column>
   </property>
+
+    <property name="ConfirmPassword">
+    <column name="ConfirmPassword"></column>
+  </property>
+  
   </class>
 </hibernate-mapping>
+

@@ -14,6 +14,7 @@ public class OneWord {
     private String Question;
     private int Positive;
     private int Negative;
+    private int BallotId;
 
     /**
      * @return the OneWordId
@@ -69,5 +70,16 @@ public class OneWord {
      */
     public void setNegative(int Negative) {
         this.Negative = Negative;
+    }
+    
+     public int getBallotId() {
+        return BallotId;
+    }
+
+    /**
+     * @param Negative the Negative to set
+     */
+    public void setBallotId(int ballotid) {
+        this.BallotId = ballotid;
     }
 }

@@ -13,7 +13,7 @@ import org.springframework.orm.hibernate4.HibernateTemplate;
  *
  * @author EDU
  */
-public class OpenEnded {
+public class OpenEndedDAO {
     HibernateTemplate template;
         public void setTemplate(HibernateTemplate template) {  
         this.template = template;  

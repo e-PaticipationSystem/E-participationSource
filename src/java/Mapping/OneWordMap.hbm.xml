@@ -18,5 +18,10 @@
   <property name="Negative">
       <column name="Negative"></column>
   </property>
+    <property name="BallotId">
+      <column name="BallotId"></column>
+  </property>
+
       </class>
 </hibernate-mapping>
+

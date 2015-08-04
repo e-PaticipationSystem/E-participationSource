@@ -167,7 +167,7 @@
                 var check=document.getElementById('titleR').value;
                 if(check=="")
                 {
-                    alert("Please Enter Your title the click proceed");
+                    alert("Please Enter Your title then click proceed");
                 }
                 else
                 {
@@ -290,7 +290,9 @@
                             
                                 <span class="pull-left" onclick="addTt()">View More...</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
+                                    <div class="clearfix">
+                                        
+                                    </div>
                                </a>
                             </div>                          
                         </div>
@@ -313,7 +315,9 @@
                             
                                     <span class="pull-left">View More...</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
+                                    <div class="clearfix">
+                                        
+                                    </div>
                                </a>
                             </div>                          
                         </div>

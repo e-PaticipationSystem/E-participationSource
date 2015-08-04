@@ -21,5 +21,79 @@
     p:password="${jdbc.password}" /-->
 
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
+ <bean id="dataSource" 
+         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+	<property name="url" value="jdbc:mysql://localhost:3306/audience?zeroDateTimeBehavior=convertToNull" />
+	<property name="username" value="root" />
+	<property name="password" value="" />
+    </bean> 
+  
+    <bean id="mysessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 
+	    <property name="dataSource" ref="dataSource"></property>
+
+	     <property name="mappingResources">
+
+	            <list>
+
+	               <value>Mapping/AdminMap.hbm.xml</value>
+                        <value>Mapping/AnswersMap.hbm.xml</value>
+                        <value>Mapping/BallotMap.hbm.xml</value>
+                        <value>Mapping/CandidateMap.hbm.xml</value>
+                        <value>Mapping/OneWordMap.hbm.xml</value>
+                        <value>Mapping/OpenEndedMap.hbm.xml</value>
+                        <value>Mapping/ParticipantMap.hbm.xml</value>
+                        <value>Mapping/SessionMap.hbm.xml</value>
+
+	            </list>
+
+	        </property>
+
+	    <property name="hibernateProperties">
+
+	      <props>
+
+	        <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+               <prop key="hibernate.hbm2ddl.auto">update</prop>  
+	        <prop key="hibernate.show_sql">true</prop>
+
+	      </props>
+
+	    </property>
+
+	  </bean>
+
+    <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
+     <bean id="template" class="org.springframework.orm.hibernate4.HibernateTemplate">  
+   <property name="sessionFactory" ref="mysessionFactory"></property>
+         
+         
+         
+    </bean>  
+  
+    <bean id="a" class="DAO.AdminDAO">
+    <property name="template" ref="template"></property> 
+</bean>
+<bean id="b" class="DAO.AnswerDAO">
+    <property name="template" ref="template"></property> 
+</bean>
+<bean id="c" class="DAO.BallotDAO">
+    <property name="template" ref="template"></property> 
+</bean>
+<bean id="d" class="DAO.CandidateDAO">
+    <property name="template" ref="template"></property> 
+</bean>
+<bean id="e" class="DAO.OneWordDAO">
+    <property name="template" ref="template"></property> 
+</bean>
+<bean id="f" class="DAO.OpenEndedDAO">
+    <property name="template" ref="template"></property> 
+</bean>
+<bean id="g" class="DAO.ParticipantDAO">
+    <property name="template" ref="template"></property> 
+</bean>
+<bean id="h" class="DAO.SessionDAO">
+    <property name="template" ref="template"></property> 
+</bean>
 </beans>

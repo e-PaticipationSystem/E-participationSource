@@ -14,6 +14,7 @@ import org.springframework.orm.hibernate4.HibernateTemplate;
  * @author EDU
  */
 public class AdminDAO {
+
         HibernateTemplate template;
         public void setTemplate(HibernateTemplate template) {  
         this.template = template;  
