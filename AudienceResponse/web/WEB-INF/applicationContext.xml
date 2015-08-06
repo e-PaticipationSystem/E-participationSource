@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <!--bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+          p:location="/WEB-INF/jdbc.properties" />
+
+<bean id="dataSource"
+    class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+    p:driverClassName="${jdbc.driverClassName}"
+    p:url="${jdbc.url}"
+    p:username="${jdbc.username}"
+    p:password="${jdbc.password}" /-->
+<bean id="dataSource" 
+         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+	<property name="url" value="jdbc:mysql://localhost:3306/audience?zeroDateTimeBehavior=convertToNull" />
+	<property name="username" value="root" />
+	<property name="password" value="" />
+    </bean>
+    <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
+        <bean id="mysessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+
+	    <property name="dataSource" ref="dataSource"></property>
+
+	     <property name="mappingResources">
+
+	            <list>
+
+	                <value>Admin.hbm.xml</value>
+                        <value>Answer.hbm.xml</value>
+                        <value>Ballot.hbm.xml</value>
+                        <value>Candidate.hbm.xml</value>
+                         <value>OneWord.hbm.xml</value>
+                         <value>OpenEnded.hbm.xml</value>
+                         <value>Participant.hbm.xml</value>
+                         <value>Session.hbm.xml</value>
+
+	            </list>
+
+	        </property>
+
+	    <property name="hibernateProperties">
+
+	      <props>
+
+	        <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+               <prop key="hibernate.hbm2ddl.auto">update</prop>  
+	        <prop key="hibernate.show_sql">true</prop>
+
+	      </props>
+
+	    </property>
+
+	  </bean>
+          
+                  <bean id="template" class="org.springframework.orm.hibernate4.HibernateTemplate">  
+   <property name="sessionFactory" ref="mysessionFactory"></property>
+         
+         
+         
+    </bean>  
+    
+    
+        <bean id="admin" class="com.DAO.AdminDAO">
+    <property name="template" ref="template"></property> 
+        </bean>
+        
+                <bean id="answer" class="com.DAO.AnswerDAO">
+    <property name="template" ref="template"></property> 
+        </bean>
+        
+                   <bean id="ballot" class="com.DAO.BallotDAO">
+    <property name="template" ref="template"></property> 
+        </bean>
+        
+                       <bean id="candidate" class="com.DAO.CandidateDAO">
+    <property name="template" ref="template"></property> 
+        </bean>
+        
+                               <bean id="one" class="com.DAO.OneWordDAO">
+    <property name="template" ref="template"></property> 
+        </bean>
+        
+                                     <bean id="open" class="com.DAO.OpenEndedDAO">
+    <property name="template" ref="template"></property> 
+        </bean>
+        
+                                        <bean id="part" class="com.DAO.ParticipantDAO">
+    <property name="template" ref="template"></property> 
+        </bean>
+        
+                                              <bean id="ses" class="com.DAO.SessionDAO">
+    <property name="template" ref="template"></property> 
+        </bean>
+</beans>
