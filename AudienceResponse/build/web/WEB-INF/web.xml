@@ -25,6 +25,10 @@
         <servlet-name>FetchCreation</servlet-name>
         <servlet-class>com.Servlets.FetchCreation</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CheckType</servlet-name>
+        <servlet-class>com.Servlets.CheckType</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -40,6 +44,10 @@
     <servlet-mapping>
         <servlet-name>FetchCreation</servlet-name>
         <url-pattern>/FetchCreation</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckType</servlet-name>
+        <url-pattern>/CheckType</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

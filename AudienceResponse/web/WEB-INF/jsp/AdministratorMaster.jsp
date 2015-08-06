@@ -36,16 +36,17 @@
            function FetchFormCreater()
             { 
                  var title=document.getElementById('Title').value;
-                 document.getElementById("Titl").value=document.getElementById("Title").value;
+                 //document.getElementById("Titl").value=document.getElementById("Title").value;
                 if(title=="")
                 {
                     alert("Please Enter Your title then click proceed:- * is required");
                 }
                 else
                 {
-                    if (window.XMLHttpRequest)
+                     if (window.XMLHttpRequest)
                         {// code for IE7+, Firefox, Chrome, Opera, Safari
-                            xmlhttp=new XMLHttpRequest();  
+                            xmlhttp=new XMLHttpRequest(); 
+                        }
                         else
                             {// code for IE6, IE5
                                 xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
@@ -59,9 +60,46 @@
                             }
                             xmlhttp.open("POST","FetchCreation",true);
                             xmlhttp.send();
+                }
+               document.getElementById("").innerHTML=document.getElementById("").value;
+            }
+            function TypeTitle()
+            {
+                var tit=document.getElementById("Title").value;
+                document.getElementById("Titl").innerHTML=tit;
+            }
+            function WriteQuestion()
+            {
+                var Question=document.getElementById("Question").value;
+                document.getElementById("QuestionL").innerHTML = Question;
+            }
+            function CheckType()
+            {
+                 var tpe=document.getElementById("type").value;
+                //alert(tpe);
+                if(tpe=="Open Ended")
+                { 
+                    if (window.XMLHttpRequest)
+                        {// code for IE7+, Firefox, Chrome, Opera, Safari
+                            xmlhttp=new XMLHttpRequest(); 
                         }
+                        else
+                            {// code for IE6, IE5
+                                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                            }
+                            xmlhttp.onreadystatechange=function()
+                            {
+                                if (xmlhttp.readyState===4 && xmlhttp.status===200)
+                                    {
+                                        document.getElementById("QuestionL").innerHTML=document.getElementById("QuestionL").innerHTML+xmlhttp.responseText;
+                                        //document.getElementById("Options").innerHTML=xmlhttp.responseText;
+                                    }
+                            }
+                            xmlhttp.open("GET","CheckType",true);
+                            xmlhttp.send(); 
                 }
             }
+            
            
      </script>
     </head>
@@ -174,9 +212,8 @@
               <div class="col-lg-4">
                          THIS IS THE CONTENT PLACE 3
                          <h1 id="Titl"></h1>
-                        <div id="third">
-                      
-                        </div>
+                         <p id="QuestionL"><p>
+                        
               </div>
    
           </div>

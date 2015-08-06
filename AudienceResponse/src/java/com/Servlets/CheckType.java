@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author EDU
  */
-public class FetchCreation extends HttpServlet {
+public class CheckType extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,10 +35,10 @@ public class FetchCreation extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet FetchCreation</title>");            
+            out.println("<title>Servlet CheckType</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet FetchCreation at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet CheckType at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -58,13 +58,12 @@ public class FetchCreation extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-        out.println("<div class=\"col-lg-4\" id=\"left\" >");
-        out.println("<label>Enter title</label><label style=\"color:red\">*</label>");
-        out.println("<input type=\"text\" id=\"Title\" onkeyup=\"TypeTitle()\" /></br>");
-        out.println("<input type=\"button\" onclick=\"FetchFormCreater()\" value=\"Proceed>>\" />");
-        out.println("</div>");
-        
+            out.println("<p id=\"QuestionL\">");
+            out.println("<input type=\"text\"/ id=\"Answer\">");
+            out.println("<p>");
+            
         }
+        
     }
 
     /**
@@ -78,26 +77,7 @@ public class FetchCreation extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-         //String title=request.getParameter("title");
-        out.println("<div class=\"col-lg-4\" id=\"left\">");
-       // out.println("<h5>Enter title</h5>");
-        //out.println("<input type=\"text\" id=\"titleR\" onblur=\"AddTitle()\" />");
-        out.println("Question");
-        out.println("<textarea rows=\"6\" cols=\"45\" id=\"Question\" onkeyup=\"WriteQuestion() \"></textarea><br/>");
-        out.println("<input type=\"checkbox\" id=\"required\"/>Required");
-         out.println("<h5>Type</h5>");
-         out.println("<select id=\"type\" onchange=\"CheckType() \"><option>-Choose Type-</option><option>One Word</option><option>Open Ended</option></select><br/>");
-         out.println("<div id=\"radio\">");
-         out.println("<label id=\"y\"></label>");
-         out.println("</div>");
-         out.println("<label id=\"read\"></label></br>");
-         out.println("<label id=\"reader\"></label></br>");
-         out.println("<input value=\"Next Question\" type=\"button\" onclick=\"duplicateDiv(); copyDiv2(); \">");
-           
-         out.println("</div>");
-        }
+        processRequest(request, response);
     }
 
     /**
