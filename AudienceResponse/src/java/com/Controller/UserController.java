@@ -15,9 +15,10 @@ public class UserController {
     
    @RequestMapping("/Login")  
     public ModelAndView helloWorld() {  
-   
+        
         return new ModelAndView();  
     }  
+    
     
     @RequestMapping("/hello2")  
     public ModelAndView helloWorld2(Model model) { //Model model is a dummy model 
@@ -26,5 +27,10 @@ public class UserController {
         model.addAttribute("country","south africa");
         model.addAttribute("message",message);
         return new ModelAndView("emp"); //return only the view 
+    }
+    @RequestMapping("/AdministratorMaster")  
+    public ModelAndView helloWorld3() {  
+        
+        return new ModelAndView();  
     }  
 }

@@ -10,6 +10,60 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width">        
      <link rel="stylesheet" href="styles/css/templatemo_main.css">
+     <script>
+          function addTt()
+            {
+               
+                if (window.XMLHttpRequest)
+                        {// code for IE7+, Firefox, Chrome, Opera, Safari
+                            xmlhttp=new XMLHttpRequest(); 
+                        }
+                        else
+                            {// code for IE6, IE5
+                                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                            }
+                            xmlhttp.onreadystatechange=function()
+                            {
+                                if (xmlhttp.readyState===4 && xmlhttp.status===200)
+                                    {
+                                        document.getElementById("left").innerHTML=xmlhttp.responseText;
+                                    }
+                            }
+                            xmlhttp.open("GET","FetchCreation",true);
+                            xmlhttp.send();
+            }
+           
+           function FetchFormCreater()
+            { 
+                 var title=document.getElementById('Title').value;
+                 document.getElementById("Titl").value=document.getElementById("Title").value;
+                if(title=="")
+                {
+                    alert("Please Enter Your title then click proceed:- * is required");
+                }
+                else
+                {
+                    if (window.XMLHttpRequest)
+                        {// code for IE7+, Firefox, Chrome, Opera, Safari
+                            xmlhttp=new XMLHttpRequest();  
+                        else
+                            {// code for IE6, IE5
+                                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                            }
+                            xmlhttp.onreadystatechange=function()
+                            {
+                                if (xmlhttp.readyState===4 && xmlhttp.status===200)
+                                    {
+                                        document.getElementById("left").innerHTML=xmlhttp.responseText;
+                                    }
+                            }
+                            xmlhttp.open("POST","FetchCreation",true);
+                            xmlhttp.send();
+                        }
+                }
+            }
+           
+     </script>
     </head>
 
     <body>
@@ -28,7 +82,7 @@
             </form>
           </li>
           <li class="active"><a href="#"><i class="fa fa-home"></i>Dashboard</a></li>         
-          <li><a href="#"><i class="fa fa-cubes"></i><span class="badge pull-right"></span><u>CREATE POLL</u></a></li>
+          <li><a href="#" onclick="addTt()"><i class="fa fa-cubes"></i><span class="badge pull-right"></span><u>CREATE POLL</u></a></li>
           <li><a href="#"><i class="fa fa-map-marker"></i><span class="badge pull-right"></span><u>MY SESSIONS</u></a></li>
           <li><a href="#"><i class="fa fa-users"></i><span class="badge pull-right"></span><u>PARTICIPANTS</u></a></li>
           <li><a href="#"><i class="fa fa-cog"></i>SETTINGS</a></li>
@@ -109,14 +163,20 @@
                     </div>
 		</div>
               
-              <div class="col-lg-4">
+              <div class="col-lg-4" id="left">
                          THIS IS THE CONTENT PLACE
               </div>
-              <div class="col-lg-4">
+              <div class="col-lg-4" id="copyHere">
                          THIS IS THE CONTENT PLACE 2
+                         <label id="read"></label>
+                         <label id="readit"></label>
               </div>
-               <div class="col-lg-4">
+              <div class="col-lg-4">
                          THIS IS THE CONTENT PLACE 3
+                         <h1 id="Titl"></h1>
+                        <div id="third">
+                      
+                        </div>
               </div>
    
           </div>
